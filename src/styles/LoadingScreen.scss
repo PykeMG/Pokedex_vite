@@ -1,0 +1,72 @@
+.loadingScreen{
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    place-items: center;
+    background: #E4E2DD;
+    position: relative;
+
+    .contentLoading{
+        
+        text-align: center;
+        padding: 2rem 0;
+        h2{
+            color: #2B2B2B;
+            font-size: 1rem;
+            text-transform: uppercase;
+            padding: 20px 0;
+        }
+    }
+    .loadingScreenIcon{
+        width: 250px;
+        height: 250px;
+        object-fit: contain;
+        animation: 5s scale infinite;
+    }
+    .loading{
+        background-color: #2B2B2B;
+        width: 300px;
+        height: 36px;
+        border: 5px solid #2B2B2B;
+        position: relative;
+        z-index: 100;
+    }
+    .loading::before{
+        content: "";
+        top: 0;
+        left: 0;
+        width: 0;
+        background-color: #d83535;
+        height: 26px;
+        position: absolute;
+        z-index: 50;
+        animation: 1s loading;
+    }
+}
+
+
+
+@keyframes loading {
+    0%{
+        width: 0%;
+    };
+    50%{
+        width: 50%;
+    };
+    100%{
+        width: 100%;
+    };
+}
+
+@keyframes scale {
+    0%{
+        scale:0.7;
+    };
+    50%{
+        scale: 0.9;
+    };
+    100%{
+        scale: 1;
+    };
+}

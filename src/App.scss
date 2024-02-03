@@ -1,0 +1,133 @@
+@import url('https://fonts.googleapis.com/css2?family=Ubuntu:wght@300;400;500&display=swap');
+*,
+*::after,
+*::before{
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body{
+  font-family: 'Ubuntu', sans-serif;
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  background-color: #E4E2DD;
+
+  .Grass, .grass{
+    background-color: #55c96a;
+    background-size: cover;
+    height: 100%;
+  }
+  .type-grass{
+    background-color: #65e77d;
+  }
+  .Poison, .poison{
+    background-color: #844bda;
+    background-size: cover;
+    height: 100%;
+  }
+  .type-poison{
+    background-color: #9a6be0;
+  }
+  .Fire, .fire{
+    background-color: #ff6565;
+    background-size: cover;
+    height: 100%;   
+  }
+  .type-fire{
+    background-color: #d31e18;
+  }
+  .Water, .water{
+    background: linear-gradient(253deg, rgba(14,46,126,1) 0%, rgba(21,90,255,1) 100%);
+    background-size: cover;
+    height: 100%;   
+  }
+  .type-water{
+    background-color: #d31e18;
+  }
+  .Bug, .bug{
+    background: linear-gradient(253deg, rgba(198,221,10,1) 0%, rgba(143,159,3,1) 100%);
+    background-size: cover;
+    height: 100%;
+    
+  }
+  .Normal, .normal{
+    background: linear-gradient(253deg, rgba(231,231,197,1) 0%, rgba(117,117,75,1) 100%);
+      background-size: cover;
+      height: 100%;
+      
+  }
+  .Flying, .flying{
+    background: skyblue;
+      background-size: cover;
+      height: 100%;     
+  }
+  .Dark, .dark{
+    background: black;
+      background-size: cover;
+      height: 100%;
+      
+  }
+  .Electric, .electric{
+    background: linear-gradient(253deg, rgba(186,159,53,1) 0%, rgba(254,209,30,1) 100%);;
+      background-size: cover;
+      height: 100%;
+      
+  }
+  .Ice, .ice{
+    background: linear-gradient(337deg, rgba(230,241,241,1) 0%, rgba(91,190,190,1) 100%);;
+      background-size: cover;
+      height: 100%;
+      
+  }
+  .Steel, .steel{
+    background: #B8B8D0;
+      background-size: cover;
+      height: 100%;
+      
+  }
+  .Ground, .ground{
+    background: linear-gradient(337deg, rgba(112,93,41,1) 0%, rgba(224,192,104,1) 100%);;
+      background-size: cover;
+      height: 100%;
+      
+  }
+  .Fairy, .fairy{
+    background: linear-gradient(337deg, rgba(203,9,52,1) 0%, rgba(238,153,172,1) 100%);;
+      background-size: cover;
+      height: 100%;
+      
+  }
+  .Fighting, .fighting{
+    background: linear-gradient(257deg, rgba(75,20,17,1) 0%, rgba(192,48,40,1) 100%);;
+      background-size: cover;
+      height: 100%;
+      
+  }
+  .Psychic, .psychic{
+    background: linear-gradient(233deg, rgba(149,6,122,1) 0%, rgba(248,88,136,1) 100%);;
+      background-size: cover;
+      height: 100%;
+      
+  }
+  .Rock, .rock{
+    background:  linear-gradient(253deg, rgba(224,189,33,1) 0%, rgba(84,73,26,1) 100%);;
+      background-size: cover;
+      height: 100%;
+      
+  }
+  .Ghost,.ghost{
+    background: linear-gradient(233deg, rgba(4,4,6,1) 0%, rgba(66,54,238,1) 100%);;
+      background-size: cover;
+      height: 100%;
+      
+  }
+  .Dragon, .dragon{
+    background: linear-gradient(253deg, rgba(37,107,110,1) 0%, rgba(57,173,177,1) 100%);;
+      background-size: cover;
+      height: 100%;
+      
+  }
+}
+
