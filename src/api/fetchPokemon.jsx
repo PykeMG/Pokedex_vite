@@ -30,8 +30,8 @@ export async function fetchPokemon(pokemonname) {
         weight: result.weight,
         height: result.height,
         ability: result.abilities[0]?.ability.name,
-        description: result2.flavor_text_entries[7]?.flavor_text,
         maxstat: 255,
+        description: result2.flavor_text_entries[7]?.flavor_text,
       };
 
       return pokemon;

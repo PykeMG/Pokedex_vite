@@ -3,13 +3,14 @@ import { useParams } from "react-router-dom";
 import background from '../assets/background.png';
 import Footer from '../components/Footer';
 import Stats from '../components/Stats';
+import TypeCapsule from '../components/TypeCapsule';
+import About from '../components/About';
 import BackButton from '../components/BackButton';
 import {fetchPokemon} from '../api/fetchPokemon';
 import {convertGramsToKilograms} from '../utils/utils';
 import {convertCentimeterstoMeters} from '../utils/utils';
 import {convertid} from '../utils/utils';
 import {formatDescription} from '../utils/utils';
-import '../styles/Pokemon.scss';
 import LoadingScreen from '../components/LoadingScreen';
 import { waitFor } from '../utils/utils';
 
@@ -34,59 +35,39 @@ const Pokemon = () =>{
     }
 
     return (<>
-    <div className="pokemon">
+    <div className="relative w-full bottom-20 overflow-x-hidden overflow-y-auto h-full mt-20">
     <BackButton />
-        <div>
-        <div className="background">
-        <img src={background} alt=""  className="image-background" />
+        <div className="absolute top-0 w-[250px] opacity-25">
+        <img src={background} alt=""  className="w-full block" />
         </div>
         <div className={pokemon?.type}>
-        <main className="pokemoninfo container">
-            <div className="pokemontittle">
+        <main className="flex flex-col items-center h-full pt-20 max-w-[500px] my-0 mx-auto relative w-full p-0 m-auto">
+            <div className="flex justify-between w-full py-4 px-6 items-center text-zinc-100">
                 <div>
-                    <h2>{pokemon?.name}</h2>
-                    <div className="typecapsule">
-                            <span className={`type-${pokemon?.type}`} >
-                                <img src={`https://raw.githubusercontent.com/duiker101/pokemon-type-svg-icons/5781623f147f1bf850f426cfe1874ba56a9b75ee/icons/${pokemon?.type}.svg`} />
-                                <p>{pokemon?.type}</p> 
-                            </span>     
+                    <h2 className="block font-bold tracking-wide text-4xl pb-1 capitalize">{pokemon?.name}</h2>
+                    <div className="flex w-full justify-between">
+                            <TypeCapsule type={pokemon?.type}/> 
                         {pokemon?.type2 &&
-                                <span className={`type-${pokemon?.type2}`}>
-                                    <img src={`https://raw.githubusercontent.com/duiker101/pokemon-type-svg-icons/5781623f147f1bf850f426cfe1874ba56a9b75ee/icons/${pokemon?.type2}.svg`} />
-                                    <p>{pokemon?.type2}</p> 
-                                </span>
+                            <TypeCapsule type={pokemon?.type2}/>
                         }
                     </div>
                 </div>
                 <div>
-                    <p className='id'>#{convertid(pokemon?.id)}</p>
+                    <p className="text-3xl">#{convertid(pokemon?.id)}</p>
                 </div>
             </div>
-            <div className="contain">
-                <img src={pokemon?.imgSrc} alt=""  className="pokemoninfoimg" />
+            <div className="size-60 flex">
+                <img src={pokemon?.imgSrc} alt=""  className="w-full z-20 object-contain" />
             </div>
-            <div className="content">
-                <div>                                         
-                    <p className="description">{formatDescription(pokemon?.description)}</p>
+            <div className="w-full flex flex-col items-center mt-[-30px] py-0 px-8 m-auto bg-slate-50 text-zinc-900 pt-14 rounded-t-3xl">
+                <div className="mb-8">                                         
+                    <p className="text-base text-wrap text-left">{formatDescription(pokemon?.description)}</p>
                 </div>
-                <div className="column">
-                    <div className="row">
-                        {convertGramsToKilograms(pokemon?.weight)} kg
-                        <span className="text">Weight</span>
-                    </div>
-                    <div className="row">
-                        {convertCentimeterstoMeters(pokemon?.height)} m
-                        <span className="text">Height</span>
-                    </div>
-                </div>
-                <div className= "abilitie">
+                <About title='Height' description={convertCentimeterstoMeters(pokemon?.height)} measure='m'/>
+                <About title='Weight' description={convertGramsToKilograms(pokemon?.weight)} measure='kg'/>           
+                <div className= "flex flex-col items-center my-5 w-full">
                     <span>Ability</span>
                     <span>{pokemon?.ability}</span>
-                </div>
-                <div className="flex">
-                    <span className="bar"></span>
-                    <span>Stats</span>
-                    <span className="bar"></span>
                 </div>
                 <div className="w-full pb-10">
                     <Stats title='HP' stat={pokemon?.hp} type={pokemon?.type}/>
@@ -95,12 +76,11 @@ const Pokemon = () =>{
                     <Stats title='SPD' stat={pokemon?.speed} type={pokemon?.type}/>
                     <Stats title='SATK' stat={pokemon?.specialAttack} type={pokemon?.type}/>
                     <Stats title='SDEF' stat={pokemon?.specialDefense} type={pokemon?.type}/>
-                </div>       
+                </div>      
             </div>
         </main>
         </div>
         </div>
-    </div>
     <Footer />
     </>
     );

@@ -1,4 +1,5 @@
 import { formatPokemonName } from "../utils/utils";
+import { deleteId } from "../utils/utils";
 export async function fetchPokemons() {
     const response = await fetch("https://unpkg.com/pokemons@1.1.0/pokemons.json");
 
@@ -15,7 +16,7 @@ export async function fetchPokemons() {
         type: pokemon.type[0],
         type2: pokemon.type[1],
         evolution: pokemon.evolution,
-        imgSrc: `https://img.pokemondb.net/artwork/${formatPokemonName(pokemon.name.toLowerCase())}.jpg`,
+        imgSrc: `https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/dream-world/${deleteId(pokemon.national_number)}.svg`,
     }));
 
     const uniquePokemons = pokemons.filter(
@@ -27,5 +28,7 @@ export async function fetchPokemons() {
     return uniquePokemons;
 }
 
-
+//deleteId(pokemon.id)
+//`https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/dream-world/${deleteId(pokemon.id)}.svg`,
+//`https://img.pokemondb.net/artwork/${formatPokemonName(pokemon.name.toLowerCase())}.jpg`,
 //https://img.pokemondb.net/artwork/${formatPokemonName(pokemon.name.toLowerCase())}.jpg

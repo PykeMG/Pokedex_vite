@@ -3,9 +3,11 @@ import { Link } from "react-router-dom";
 import { fetchPokemons } from "../api/fetchPokemons";
 import Header from '../components/Header';
 import Footer from '../components/Footer';
-import '../styles/Index.scss';
 import LoadingScreen from '../components/LoadingScreen';
 import { waitFor } from '../utils/utils';
+import {typeslower} from '../utils/utils';
+import TypeCapsule from '../components/TypeCapsule';
+import {deleteId} from '../utils/utils'
 
 const Pokemons = () => {
     const [isLoading, setIsLoading] = useState(false);
@@ -30,21 +32,23 @@ const filteredPokemons = pokemons?.slice(0, 151).filter((pokemon) => {
 })
     return (     
         <>
-        <Header query={query} setQuery={setQuery} text='Search a Pokemon' /> 
+        <Header query={query} setQuery={setQuery} text='Search pokemon name' /> 
         <section>
-        <nav>
+        <nav className="bg-white mt-48 pb-20 px-8">
                 {filteredPokemons?.slice(0, 151).map((pokemon) => (
-                <Link key={pokemon.id} className="listItem" to={`/pokemons/${pokemon.name.toLowerCase()}`}>
-                    <img src={pokemon.imgSrc} alt={pokemon.name} className="listItemIcon" />
-                    <div className="listItemText">
+                <Link key={pokemon.id} className="flex w-full gap-4 mb-4" to={`/pokemons/${pokemon.name.toLowerCase()}`}>
+                    <img src={pokemon.imgSrc} alt={pokemon.name} className="size-20 w-1/3" />
+                    <div className="flex flex-col w-2/3">
                         <div className="flex">
-                        <span>{pokemon.name}</span>
-                        <span>{pokemon.id}</span>
+                        <span className="font-bold">{pokemon.name}</span>
+                        <span className="ml-4">#{pokemon.id}</span>
                         </div>
-                        {<div className="types">
-                            <span className={pokemon.type}>{pokemon.type}</span>
-                            <span className={pokemon.type2}>{pokemon.type2}</span>
-                        </div> }
+                        <div className="flex w-full gap-1.5">
+                            <TypeCapsule type={pokemon?.type.toLowerCase()}/> 
+                        {pokemon?.type2 &&
+                            <TypeCapsule type={pokemon?.type2.toLowerCase()}/>
+                        }
+                        </div>
                     </div>
                 </Link>
                 ))}

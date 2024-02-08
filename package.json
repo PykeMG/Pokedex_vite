@@ -10,8 +10,12 @@
     "preview": "vite preview"
   },
   "dependencies": {
+    "@fontsource-variable/mulish": "^5.0.17",
+    "@nextui-org/react": "^2.2.9",
+    "@preline/tabs": "^2.0.2",
     "flowbite": "^2.2.1",
     "flowbite-react": "^0.7.2",
+    "framer-motion": "^11.0.3",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
     "react-router-dom": "^6.16.0"
@@ -21,6 +25,7 @@
     "@types/react-dom": "^18.2.7",
     "@vitejs/plugin-react": "^4.0.3",
     "autoprefixer": "^10.4.17",
+    "daisyui": "^4.6.2",
     "eslint": "^8.45.0",
     "eslint-plugin-react": "^7.32.2",
     "eslint-plugin-react-hooks": "^4.6.0",

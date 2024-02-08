@@ -2,21 +2,20 @@ import { Link } from 'react-router-dom';
 import PokemonPic from '../assets/pikachu.png';
 import Pokeball from '../assets/pokeball.png';
 import Pointer from '../assets/pointer.png';
-import '../styles/Footer.scss';
 
 const Footer = () =>{
     return(
-        <footer className="footer">
-            <Link className="footerLink" to="/pokemons">
-                <img className="footerIcon" src={PokemonPic} alt="pokeball"/>
+        <footer className="flex justify-around w-full h-20 fixed bottom-0 bg-[#d63a3a]">
+            <Link className="flex flex-col items-center text-center text-base text-slate-200 my-2 w-1/3" to="/pokemons">
+                <img className="size-8 my-1" src={PokemonPic} alt="pokeball"/>
                 Pokemons
             </Link>
-            <Link className="footerLink" to="/items">
-                <img className="footerIcon" src={Pokeball} alt="pokeball"/>
+            <Link className="flex flex-col items-center text-center text-base text-slate-200 my-2 w-1/3" to="/items">
+                <img className="size-8 my-1" src={Pokeball} alt="pokeball"/>
                 Items
             </Link>
-            <Link className="footerLink" to="/pokemons">
-                <img className="footerIcon" src={Pointer} alt="pokeball"/>
+            <Link className="flex flex-col items-center text-center text-base text-slate-200 my-2 w-1/3" to="/pokemons">
+                <img className="size-8 my-1" src={Pointer} alt="pokeball"/>
                 Map
             </Link>
         </footer>
