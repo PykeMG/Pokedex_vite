@@ -1,7 +1,7 @@
 import Pokedex from "../assets/pokedex.png";
 
 const LoadingScreen = () => {
-    return  <div className="h-screen flex flex-col justify-center place-items-center relative">
+    return  <div className="bg-zinc-100 h-screen flex flex-col justify-center place-items-center relative">
                 <img className="size-[250px] object-contain" src={Pokedex} alt="" />
                 <div className="text-center py-8">
                     <div className="loading loading-dots loading-lg"></div>

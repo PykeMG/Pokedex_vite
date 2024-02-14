@@ -5,8 +5,8 @@ const Stats = ({title, stat, type}) => {
         <div className="flex items-center mt-1">
             <p className="text-sm font-bold text-zinc-950 w-10">{title}</p>
             <span className="text-sm font-medium text-zinc-950 dark:text-gray-400 w-10 text-center">{stat}</span>
-            <div className="w-[250px] h-2 mx-1 bg-slate-300 rounded">
-                <div className={`h-2 rounded bg-slate-500 type-${type}`} style={{
+            <div className="w-[250px] h-1.5 mx-1 bg-slate-300 rounded">
+                <div className={`h-1.5 rounded bg-slate-500 type-${type}`} style={{
                     width: `${(stat/255)*100}%`,
                 }}></div>
             </div>

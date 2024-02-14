@@ -37,6 +37,11 @@ export function convertid(id){
     return id.toString().padStart(3,"0");
 }
 
+export function multiply(count){
+    const newCount = count*2;
+    return newCount;
+}
+
 export function deleteId(id){
     const lastid = id;
     const newID = lastid.split("");

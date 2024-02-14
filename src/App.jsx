@@ -8,7 +8,7 @@ function App() {
   return (
     <NextUIProvider>
     <Router>
-      <div className="App">
+      <div className="App min-h-screen bg-white">
         <Routes>
           <Route path="/pokemons/:name" element = {<Pokemon />} />
           <Route path="/pokemons" element = {<Pokemons />} />

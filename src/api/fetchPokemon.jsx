@@ -8,12 +8,6 @@ export async function fetchPokemon(pokemonname) {
         throw new Error("Failed to fetch pokemons");
     }
     const result = await response.json();
-
-    const speciesUrl = result.species.url;
-
-    const response2 = await fetch(speciesUrl);
-
-    const result2 = await response2.json();
     
     const pokemon = {
         name: result.name,
@@ -30,8 +24,6 @@ export async function fetchPokemon(pokemonname) {
         weight: result.weight,
         height: result.height,
         ability: result.abilities[0]?.ability.name,
-        maxstat: 255,
-        description: result2.flavor_text_entries[7]?.flavor_text,
       };
 
       return pokemon;
