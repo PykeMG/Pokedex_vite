@@ -2,6 +2,7 @@ import PropTypes from 'prop-types';
 import { useEffect, useState } from 'react';
 import SkeletonImage from '../skeletons/SkeletonImage';
 import { convertid } from '../utils/utils'
+import { Link } from "react-router-dom";
 
 const PokemonEvolutions = ({name, title}) => {
     const [isLoading, setIsLoading] = useState(true);
@@ -56,11 +57,11 @@ const PokemonEvolutions = ({name, title}) => {
             ) : (
               <ul className='flex items-center justify-around mt-4'>
                   {evolutions.map((evolution, index) => (
-                  <li key={index}>
+                  <Link key={index} to={`/pokemons/${evolution.name}`}>
                       <img className='size-24' src={`https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/dream-world/${evolution.id}.svg`} />
                       <p className='text-center text-zinc-950 font-bold capitalize'>{evolution.name}</p>
                       <p className='text-center text-zinc-950 font-bold capitalize'>#{convertid(evolution.id)}</p>
-                  </li>
+                  </Link>
                   ))}
               </ul>
                 )

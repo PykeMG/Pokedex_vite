@@ -1,7 +1,6 @@
 import { useEffect, useState } from 'react';
 import { useParams } from "react-router-dom";
 import background from '../assets/background.png';
-import Footer from '../components/Footer';
 import Stats from '../components/Stats';
 import TypeCapsule from '../components/TypeCapsule';
 import About from '../components/About';
@@ -10,7 +9,6 @@ import {fetchPokemon} from '../api/fetchPokemon';
 import {convertGramsToKilograms} from '../utils/utils';
 import {convertCentimeterstoMeters} from '../utils/utils';
 import {convertid} from '../utils/utils';
-import {formatDescription} from '../utils/utils';
 import LoadingScreen from '../components/LoadingScreen';
 import { waitFor } from '../utils/utils';
 import Description from '../components/Description';
@@ -39,10 +37,10 @@ const Pokemon = () =>{
     }
 
     return (<>
-    <div className="relative w-full overflow-x-hidden overflow-y-auto h-screen">
+    <div className="relative overflow-x-hidden overflow-y-auto h-screen w-full">
     <BackButton />
-        <div className="absolute top-0 w-[250px] opacity-25">
-            <img src={background} alt=""  className="w-full block" />
+        <div className="absolute top-28 h-96 w-full opacity-30 flex items-center justify-center">
+            <svg xmlns="http://www.w3.org/2000/svg" className="icon icon-tabler icon-tabler-pokeball size-96 text-zinc-100" width="24" height="24" viewBox="0 0 24 24" strokeWidth="2" stroke="currentColor" fill="none" strokeLinecap="round" strokeLinejoin="round"><path stroke="none" d="M0 0h24v24H0z" fill="none"/><path d="M12 12m-9 0a9 9 0 1 0 18 0a9 9 0 1 0 -18 0" /><path d="M12 12m-3 0a3 3 0 1 0 6 0a3 3 0 1 0 -6 0" /><path d="M3 12h6" /><path d="M15 12h6" /></svg>
         </div>
         <div className={`${pokemon?.type} h-full`} >
         <main className="flex flex-col items-center h-full pt-20 max-w-[500px] my-0 relative w-full p-0 m-auto justify-between">

@@ -2,12 +2,9 @@ import { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import { fetchPokemons } from "../api/fetchPokemons";
 import Header from '../components/Header';
-import Footer from '../components/Footer';
 import LoadingScreen from '../components/LoadingScreen';
 import { waitFor } from '../utils/utils';
-import {typeslower} from '../utils/utils';
 import TypeCapsule from '../components/TypeCapsule';
-import {deleteId} from '../utils/utils'
 
 const Pokemons = () => {
     const [isLoading, setIsLoading] = useState(false);
