@@ -34,7 +34,7 @@ const PokemonEvolutions = ({name, title}) => {
     const parseChain = (chain, evolutions) => {
         const pokemonName = chain.species.name;
         const pokemonId = getPokemonIdFromUrl(chain.species.url);
-        if (pokemonId <= 151) {
+        if (pokemonId <= 600) {
           evolutions.push({ id: pokemonId, name: pokemonName });
           }
           if (chain.evolves_to.length > 0) {

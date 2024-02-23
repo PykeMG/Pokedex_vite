@@ -16,7 +16,15 @@ export function formatDescription(description) {
     
     } else {return description;}
 }
-
+export function notnull(stat) {
+    const newStat = "n/a";
+    if (stat === null) {
+        return newStat;
+    } else {
+        return stat;
+    }
+    
+}
 export function typeslower(type) {
     return toLowerCase(type);
 }

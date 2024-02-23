@@ -15,11 +15,11 @@ body{
   height: 100vh;
 
   .Grass, .grass{
-    background-color: #65e77d;
+    background-color: #51e26c;
     background-size: cover;
   }
   .type-grass{
-    background-color: #65e77d;
+    background-color: #46e763;
   }
   .Poison, .poison{
     background-color: #844bda;
@@ -127,11 +127,11 @@ body{
     background: #a68069;
   }
   .Ghost,.ghost{
-    background: #7b3685;
+    background: #492CA6;
     background-size: cover;     
   }
   .type-ghost{
-    background: #9755a0;
+    background: #6650B8;
   }
   .Dragon, .dragon{
     background: #229599 ;
@@ -140,5 +140,17 @@ body{
   .type-dragon{
     background: #39adb1;
   }
+  .physical{
+    background: #da3e3e;
+  }
+  .special{
+    background: #4c4eff;
+  }
+  .status{
+    background: #8c8c8c;
+  }
+}
+::-webkit-scrollbar {
+  display: none;
 }
 

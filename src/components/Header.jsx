@@ -2,7 +2,7 @@ import PropTypes from 'prop-types';
 
 const Header = ({ query, setQuery, text = "Titulo por default" }) => {
     return (
-      <header className="rounded-b-2xl bg-[#d63a3a] p-8 w-full fixed top-0">
+      <header className="rounded-b-2xl bg-[#F33535] p-8 w-full fixed top-0">
       <h2 className='font-bold text-slate-200 text-3xl mb-4'>Find Your Pokemon</h2>
       <div className="relative">
           <div className="absolute inset-y-0 start-0 flex items-center ps-3 pointer-events-none">

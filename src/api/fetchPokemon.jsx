@@ -8,6 +8,9 @@ export async function fetchPokemon(pokemonname) {
         throw new Error("Failed to fetch pokemons");
     }
     const result = await response.json();
+
+    const movesData = result.moves;
+    const movelist = movesData.map(move => move.move.name);
     
     const pokemon = {
         name: result.name,
@@ -24,6 +27,7 @@ export async function fetchPokemon(pokemonname) {
         weight: result.weight,
         height: result.height,
         ability: result.abilities[0]?.ability.name,
+        moves: movelist, 
       };
 
       return pokemon;

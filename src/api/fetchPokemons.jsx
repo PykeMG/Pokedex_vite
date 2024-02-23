@@ -27,8 +27,3 @@ export async function fetchPokemons() {
 
     return uniquePokemons;
 }
-
-//deleteId(pokemon.id)
-//`https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/dream-world/${deleteId(pokemon.id)}.svg`,
-//`https://img.pokemondb.net/artwork/${formatPokemonName(pokemon.name.toLowerCase())}.jpg`,
-//https://img.pokemondb.net/artwork/${formatPokemonName(pokemon.name.toLowerCase())}.jpg
